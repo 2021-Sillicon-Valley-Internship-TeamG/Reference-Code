@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="body_main">
+    <form id="form" runat="server" action="" method="post" enctype = "multipart/form-data">
+    <div class="select_box">
+      <select id="cate1" class="cate" name="cate1" onchange="change_cate2()">
+        <option value="CATE1" selected>CATE1</option>
+        <option value="CLOTHES">CLOTHES</option>
+        <option value="SHOES">SHOES</option>
+        <option value="LIVING">LIVING</option>
+      </select>
+      <select id="cate2" class="cate" name="cate2">
+        <option selected>CATE2</option>
+        <option>Select CATE1 First</option>
+      </select>
+    </div>
+    
+    <div class="preview_div">
+      <img id="preview_img" src="../static/image/default-image.jpg" alt=""/>
+    </div>
+
+
+    <div class="form_div">
+      <input type="file" name="client_img" id="imgInput" onchange="readURL(this);">
+      <input type="submit" value="CHECK"/>
+    </div>
+
+    <div id="desc_div">
+      <p>Upload <strong>One thumbnail candidate photo</strong> and click Check!!<br>
+      Then it will rank your photo</p>
+    </div>
+
+  </form>
+  </div>
+{% endblock %}

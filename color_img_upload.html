@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="body_main">
+    <div id="select_result">
+      <label>{{cate1}}</label>
+      <label>{{cate2}}</label>
+    </div>
+    <div id="img_result">
+      <table>
+        <tr>
+          {% if True %}
+          <td rowspan="2">
+            <div id="client_result">
+              <img src="{{ url_for('static', filename=img_name) }}"/></td>
+            </div>
+          <td>
+            <div id="server_result">
+              <img id="graph_result" src="{{ url_for('static', filename=graph) }}"><br>
+              <p>color recommendation</p>
+              <div>
+                <img id="color_result"src="{{ url_for('static', filename=bar_graph) }}">
+              </div>
+            </div>
+          </td>
+          {% endif %}
+        </tr>
+      </table>
+    </div>
+  </div>
+{% endblock %}
